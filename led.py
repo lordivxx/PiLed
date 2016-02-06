@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 
+# Created by Chuck Forsyth
+# Code adapted from various sources 
+
 import time
 import argparse
-
 import RPi.GPIO as GPIO
-
-
-
-
 
 parser = argparse.ArgumentParser(description='This is a LED script by LORDIVXX.')
 parser.add_argument('-t','--timer', help='How fast the lights blink',required=True)
 parser.add_argument('-l','--lenght',help='How long the lights blink for', required=True)
 args = parser.parse_args()
 
-#TIMER = .25
 TIMER = float(args.timer)
 count = float(args.lenght)
 
@@ -26,8 +23,6 @@ Blue_LED = 22
 GPIO.setup(GREEN_LED, GPIO.OUT)
 GPIO.setup(RED_LED, GPIO.OUT)
 GPIO.setup(Blue_LED, GPIO.OUT)
-
-#count = 20
 
 while count > 0:
 	GPIO.output(GREEN_LED, False)
