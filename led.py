@@ -27,7 +27,6 @@ GREEN_LED = 18
 RED_LED = 23
 Blue_LED = 22
 
-
 # initialize GPIO pins as output pins
 GPIO.setup(GREEN_LED, GPIO.OUT)
 GPIO.setup(RED_LED, GPIO.OUT)
