@@ -14,15 +14,21 @@ GPIO.setmode(GPIO.BCM)
 
 # define GPIO pins to variables
 GREEN_LED = 18
+Blue_LED = 22
 
 # initialize GPIO pins as output pins
 GPIO.setup(GREEN_LED, GPIO.OUT)
+GPIO.setup(Blue_LED, GPIO.OUT)
 
 output = subprocess.check_output(['ps', '-A'])
-if 'ntpd' in output:
+if 'sub-write.py' in output:
     GPIO.output(GREEN_LED, True)
 else:
     GPIO.output(GREEN_LED, False)
 
+#if 'sub-write.py' in output:
+#    GPIO.output(Blue_LED, True)
+#else:
+#    GPIO.output(Blue_LED, False)
 
 #exit
